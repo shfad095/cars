@@ -17,13 +17,60 @@ namespace cars
         }
         public void Add_data()
         {
-            File.AppendAllText("h.txt", Cars.Id +"-" + " " + this.Name + " " + this.Color + " " + this.Price + " ");
+            //using (StreamWriter writer = new StreamWriter("h.txt"))
+            //{
+
+            //    writer.Write(string.Empty);
+            //    writer.WriteLine("h.txt", Cars.Id + "-" + " " + this.Name + " " + this.Color + " " + this.Price + " ");
+
+            //}
+            if (File.Exists("h.txt"))
+            {
+                using (StreamWriter writer = new StreamWriter("h.txt",true))
+                {
+                    writer.Write(Cars.Id + "-" + " " + this.Name + " " + this.Color + " " + this.Price + " " + "*");
+
+                }
+
+            }
+            else
+            {
+                StreamWriter writer = null;
+                try
+                {
+                    writer = new StreamWriter("h.txt", false);
+
+                    writer.Write(Cars.Id + "-" + " " + this.Name + " " + this.Color + " " + this.Price + " "+"*");
+
+
+
+                }
+                catch (IOException ex)
+                {
+                    Console.WriteLine("Fehler beim Erstellen der Datei: " + ex.Message);
+                }
+                finally
+                {
+                    writer?.Close();
+                }
+            }
+
 
         }
         public String[] Show_Resault()
         {
-            String d = File.ReadAllText("h.txt");
-            return d.Split("*");
+            try
+            {
+                String d = File.ReadAllText("h.txt");
+                return d.Split("*");
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(  e.Message);
+                return null;
+            }
+            
 
 
         }

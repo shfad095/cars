@@ -31,7 +31,7 @@ namespace cars
                 Console.BackgroundColor = ConsoleColor.Blue;
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("****************Menu Of Cars*************************");
-                Console.WriteLine("1-add Car To M \n2-add Car to L \n3-Add Cars To M\n4-show Car from M \n5-show Car from L \n6-show Car from M\n7.search by Id");
+                Console.WriteLine("1-add Car To M \n2-add Car to L \n3-Add Cars To H\n4-show Car from M \n5-show Car from L \n6-show Car from H\n7.search by Id");
                 Console.WriteLine("Enter Nummer of Choice From Menu: ");
                 string input = Console.ReadLine();
                 int ch;

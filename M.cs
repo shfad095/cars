@@ -15,18 +15,53 @@ namespace cars
         }
         public void Add_data()
         {
-            File.AppendAllText("m.txt", Cars.Id+"-" + " " + Name + " " + Color + " " + Price + " "+"*");
-            //throw new NotImplementedException();
+            if (File.Exists("m.txt"))
+            {
+                using (StreamWriter writer = new StreamWriter("m.txt",true))
+                {
+                    writer.Write(Cars.Id + "-" + " " + this.Name + " " + this.Color + " " + this.Price + " "+"*");
+
+                }
+
+            }
+            else
+            {
+                StreamWriter writer = null;
+                try
+                {
+                    writer = new StreamWriter("m.txt", true);
+
+                    writer.Write(Cars.Id + "-" + " " + this.Name + " " + this.Color + " " + this.Price + " " + "*");
+
+
+
+                }
+                catch (IOException ex)
+                {
+                    Console.WriteLine("Fehler beim Erstellen der Datei: " + ex.Message);
+                }
+                finally
+                {
+                    writer?.Close();
+                }
+            }
+
 
         }
         public String[] Show_Resault()
         {
-            String d = File.ReadAllText("m.txt");
-            
-            
-            return d.Split("*");
+            try
+            {
+                String d = File.ReadAllText("m.txt");
+                return d.Split("*");
+            }
+            catch (Exception e)
+            {
 
-        
+                Console.WriteLine(e.Message);
+                return null;
+            }
+
         }
 
     }

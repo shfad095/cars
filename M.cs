@@ -11,7 +11,7 @@ namespace cars
         public double Price { get; set; }
         public M()
         {
-            Cars.Id++;
+           
         }
         public void Add_data()
         {

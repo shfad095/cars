@@ -10,9 +10,10 @@ namespace cars
         
         public string Color { get; set; }
         public double Price { get; set; }
-        public H()
+    
+        public H() 
         {
-            Cars.Id++;
+        
         }
         public void Add_data()
         {

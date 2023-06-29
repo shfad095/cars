@@ -26,7 +26,7 @@ namespace cars
             //}
             if (File.Exists("h.txt"))
             {
-                using (StreamWriter writer = new StreamWriter("h.txt",true))
+                using (StreamWriter writer = new StreamWriter("h.txt",true ))
                 {
                     writer.Write(Cars.Id + "-" + " " + this.Name + " " + this.Color + " " + this.Price + " " + "*");
 

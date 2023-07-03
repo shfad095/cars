@@ -196,6 +196,12 @@ namespace cars
 
                 String[] arr = mm.Show_Resault();
                 Console.WriteLine("**************Die Ergebnisse************");
+                if(arr == null) { 
+
+                    Console.WriteLine("There is no Car");
+                    return;
+                
+                }
                 for (int i = 0; i < arr.Length; i++)
                 {
                     String[] ss = arr[i].Split(" ");

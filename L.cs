@@ -49,17 +49,23 @@ namespace cars
         }
         public String[] Show_Resault()
         {
-            try
-            {
-                String d = File.ReadAllText("l.txt");
-                return d.Split("*");
-            }
-            catch (Exception e)
-            {
+            if (!File.Exists("l.txt")) { return null; }
 
-                Console.WriteLine(e.Message);
-                return null;
-            }
+
+            try
+                {
+                    String d = File.ReadAllText("l.txt");
+                    return d.Split("*");
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.Message);
+                    return null;
+                }
+
+            
+           
 
         }
     }

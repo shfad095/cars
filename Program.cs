@@ -30,6 +30,7 @@ namespace cars
                 }
                 Console.BackgroundColor = ConsoleColor.Blue;
                 Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Clear();
                 Console.WriteLine("****************Menu Of Cars*************************");
                 Console.WriteLine("1-add Car To M \n2-add Car to L \n3-Add Cars To H\n4-show Car from M \n5-show Car from L \n6-show Car from H\n7.search by Id");
                 Console.WriteLine("Enter Nummer of Choice From Menu: ");
@@ -104,10 +105,18 @@ namespace cars
                             do
                             {
                                 int new_id;
-                                Console.WriteLine("Enter nummber between 0 and " + Cars.Id + " or x to exit");
+                                if (Cars.Id <= 0)
+                                {
+                                    Console.WriteLine(" There is no Car");
+                                    break;
+                                }
+
+                                   
+
+                                    Console.WriteLine("Enter nummber between 1 and " + Cars.Id + " or x to exit");
                                 string id_tosearch = Console.ReadLine();
                                 bool tester_bool = int.TryParse(id_tosearch, out new_id);
-                                if ( id_tosearch == "x".ToLower())
+                                if (id_tosearch == "x".ToLower())
                                 {
                                     break;
                                 }
@@ -132,6 +141,7 @@ namespace cars
                                     //Cars.Id = id;
 
                                 }
+                                break;
 
                             } while (true);
                             break;
@@ -164,7 +174,7 @@ namespace cars
             static void search(String[] s, int eingaben)
 
             {
-
+                if (s == null) { return; }
                
                 foreach (var item in s)
                 {

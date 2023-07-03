@@ -59,6 +59,7 @@ namespace cars
         }
         public String[] Show_Resault()
         {
+            if (!File.Exists("h.txt")) { return null; }
             try
             {
                 String d = File.ReadAllText("h.txt");

@@ -50,6 +50,9 @@ namespace cars
         }
         public String[] Show_Resault()
         {
+            if (File.Exists("m.txt"))
+            {
+
             try
             {
                 String d = File.ReadAllText("m.txt");
@@ -61,6 +64,9 @@ namespace cars
                 Console.WriteLine(e.Message);
                 return null;
             }
+                
+            }
+            return null;
 
         }
 

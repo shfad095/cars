@@ -9,7 +9,7 @@ namespace cars
         static int Id {set; get;}
         string Color { set; get; }
         double Price { set; get; }
-       // void Add_data();
+       
        
         
 

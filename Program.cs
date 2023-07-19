@@ -65,6 +65,8 @@ namespace cars
                             {
                                 break;
                             }
+                            Console.WriteLine("Enter nummber for Price.....");
+                            Console.WriteLine("Enter Price Of Cars : ");
                         } while (true);
                         Console.Clear();
                     }
@@ -73,19 +75,19 @@ namespace cars
                         case 1:
                             M m = new M();
                             Cars.Id++;
-                            installized(m, name, Cars.Id, price, color);
+                            Service_Class.installized(m, name, Cars.Id, price, color);
 
 
                             break;
                         case 2:
                             L l = new L();
                             Cars.Id++;
-                            installized(l, name, Cars.Id, price, color);
+                            Service_Class.installized(l, name, Cars.Id, price, color);
                             break;
                         case 3:
                             H h = new H();
                             Cars.Id++;
-                            installized(h, name, Cars.Id, price, color);
+                            Service_Class.installized(h, name, Cars.Id, price, color);
                             Console.WriteLine("Done");
                             break;
                         case 4:
@@ -94,7 +96,7 @@ namespace cars
                             break;
                         case 5:
                             L ll = new L();
-                            String[] arr1 = ll.Show_Resault();
+                            String[] arr1 = Service_Class.Show_Resault(ll);
                             Ergebnisse(ll);
                             break;
                         case 6:
@@ -136,7 +138,7 @@ namespace cars
 
                                 for (int i = 0; i < cars.Length; i++)
                                 {
-                                    Conterner[i] = cars[i].Show_Resault();
+                                    Conterner[i] = Service_Class.Show_Resault(cars[i]);
                                     search(Conterner[i], new_id);
                                     //Cars.Id = id;
 
@@ -194,7 +196,7 @@ namespace cars
                 int count = 0;
                 String[] Title = { "Id : ", "Car : ", "Color: ", "Price: ", "" };
 
-                String[] arr = mm.Show_Resault();
+                String[] arr = Service_Class.Show_Resault(mm);
                 Console.WriteLine("**************Die Ergebnisse************");
                 if(arr == null) { 
 
@@ -224,17 +226,7 @@ namespace cars
 
             }
 
-            static void installized(Cars car, String name1, int id1, int price1, String color1)
-            {
-
-                car.Name = name1;
-
-                car.Price = price1;
-                car.Color = color1;
-                car.Add_data();
-                Console.WriteLine("Done");
-
-            }
+            
         }
 
         private static void Id_Write(string idtext)

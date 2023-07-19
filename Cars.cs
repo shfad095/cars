@@ -1,7 +1,4 @@
-﻿using System;
-
-
-namespace cars
+﻿namespace cars
 {
     public interface Cars
     {

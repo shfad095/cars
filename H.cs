@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Runtime.InteropServices;
-
-namespace cars
+﻿namespace cars
 {
     class H:Cars
     {

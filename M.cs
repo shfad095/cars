@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace cars
+﻿namespace cars
 {
     class M : Cars
     {    

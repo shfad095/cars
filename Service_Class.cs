@@ -2,13 +2,11 @@
 
 using System.IO;
 
-
-
 namespace cars
 {
-    public static  class Service_Class
+    public static class Service_Class
     {
-       public static void installized(Cars car, String name1, int id1, int price1, String color1)
+        public static void installized(Cars car, String name1, int id1, int price1, String color1)
         {
 
             car.Name = name1;
@@ -28,7 +26,7 @@ namespace cars
             {
                 using (StreamWriter writer = new StreamWriter(textname, true))
                 {
-                    writetofile(writer,car);
+                    writetofile(writer, car);
 
                 }
 
@@ -40,7 +38,7 @@ namespace cars
                 {
                     writer = new StreamWriter(textname, false);
 
-                    writetofile(writer,car);
+                    writetofile(writer, car);
 
 
 
@@ -58,11 +56,11 @@ namespace cars
 
         }
 
-        private static void writetofile(StreamWriter writer,Cars car)
+        private static void writetofile(StreamWriter writer, Cars car)
         {
             writer.Write(Cars.Id + "-" + " " + car.Name + " " + car.Color + " " + car.Price + " " + "*");
         }
-        public static  String[] Show_Resault(Cars car)
+        public static String[] Show_Resault(Cars car)
         {
             string textname = car.GetType().Name;
             textname += ".txt";

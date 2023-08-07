@@ -123,7 +123,7 @@ namespace cars
                                 }
                                 if (new_id > Cars.Id || new_id < 0)
                                 {
-                                    Console.WriteLine("Enter nummber between 0 and " + Cars.Id + " or x to exit");
+                                    
                                     continue;
                                 }
                                 Cars[] cars = new Cars[3];
